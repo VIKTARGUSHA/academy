@@ -29,5 +29,6 @@ public class Task1 {
         if (stringBuilder.length() == 0){
             System.out.println(true);
         } else System.out.println(false);
+        scanner.close();
     }
 }

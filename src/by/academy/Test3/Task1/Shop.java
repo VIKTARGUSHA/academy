@@ -38,27 +38,7 @@ public class Shop {
         Scanner scanner = new Scanner(System.in);
         String date = scanner.next();
         System.out.println(CheckDate.checkDate(date));
-
-        SimpleDateFormat sDF = new SimpleDateFormat("dd/MM/yyyy");
-        SimpleDateFormat sDF1 = new SimpleDateFormat("dd-MM-yyyy");
-        SimpleDateFormat sdF2 = new SimpleDateFormat("dd");
-        SimpleDateFormat sdF3 = new SimpleDateFormat("MM");
-        SimpleDateFormat sdF4 = new SimpleDateFormat("yyyy");
-        String[] array = CheckDate.checkDate(date).split(" ");
-        try {
-            if (Integer.parseInt(array[0]) == 1) {
-                Date date1 = sDF.parse(date);
-                System.out.println("День: " + sdF2.format(date1) + "\n"
-                        + "Месяц: " + sdF3.format(date1) + "\n" + "Year: " + sdF4.format(date1));
-            }
-             else if (Integer.parseInt(array[0]) == 2) {
-                Date date2 = sDF1.parse(date);
-                System.out.println("День: " + sdF2.format(date2) + "\n" + "Месяц: "+ sdF3.format(date2)
-                        + "\n" + "Year: " + sdF4.format(date2));
-            }
-        } catch (ParseException e) {
-            System.out.println("Hello parse exc");
-        }
+        CheckDate.showDate(date, CheckDate.checkDate(date));
         scanner.close();
     }
 

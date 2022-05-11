@@ -33,11 +33,14 @@ public class Task1 {
         Task1.getDayOfWeek(calendar);
         Task1.getQuantityOfDays(calendar1, calendar2);
         Task1.checkLeapYear(calendar4);
+        Task1 task1 = new Task1("22-02-2002");
     }
+
     public Task1(String s) throws ParseException {
         Pattern pattern = Pattern.compile("\\d\\d-\\d\\d-\\d{4}");
         Matcher matcher = pattern.matcher(s);
         if (!matcher.matches()){
+            System.out.println("Object Task1 isn't created");
             return;
         }
         SimpleDateFormat sDF = new SimpleDateFormat("dd-MM-yyyy");
@@ -48,8 +51,6 @@ public class Task1 {
 Year year = new Year(calendar.get(Calendar.YEAR));
 Month month = new Month(calendar.get(Calendar.MONTH));
 Day day = new Day(calendar.get(Calendar.DAY_OF_MONTH));
-
-
     }
 
     public static class Year {

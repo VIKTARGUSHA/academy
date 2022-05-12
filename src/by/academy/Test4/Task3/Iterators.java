@@ -1,5 +1,6 @@
 package by.academy.Test4.Task3;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Consumer;
 
@@ -13,6 +14,7 @@ public class Iterators<T> implements Iterator{
     public void remove() {
         Iterator.super.remove();
     }
+    ArrayList
 
     @Override
     public Object next() {

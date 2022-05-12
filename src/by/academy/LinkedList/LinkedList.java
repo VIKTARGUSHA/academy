@@ -118,4 +118,4 @@ package by.academy.LinkedList;
             this.size = size;
         }
     }
-}
+

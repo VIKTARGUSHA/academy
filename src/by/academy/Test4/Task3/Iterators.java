@@ -20,15 +20,14 @@ public class Iterators<T> implements Iterator {
 
     @Override
     public void remove() {
+System.arraycopy(array,indexIterator+1, array, indexIterator, array.length-indexIterator-1);
 
-        Iterator.super.remove();
+     //   Iterator.super.remove();
     }
-    ArrayList
 
     @Override
     public T next() {
         return array[indexIterator++];
-
     }
 }
 

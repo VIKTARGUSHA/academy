@@ -8,6 +8,7 @@ public class Iterators<T> implements Iterator {
 
     T[] array;
     int indexIterator = 0;
+    int lastElementVar = 1;
 
     public Iterators (T [] array){
         this.array = array;
@@ -20,8 +21,11 @@ public class Iterators<T> implements Iterator {
 
     @Override
     public void remove() {
-System.arraycopy(array,indexIterator+1, array, indexIterator, array.length-indexIterator-1);
 
+System.arraycopy(array, indexIterator, array, indexIterator-1, array.length-indexIterator);
+array[array.length-lastElementVar] = null;
+lastElementVar++;
+indexIterator--;
      //   Iterator.super.remove();
     }
 

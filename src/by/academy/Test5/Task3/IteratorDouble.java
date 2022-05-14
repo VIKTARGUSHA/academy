@@ -33,9 +33,9 @@ public class IteratorDouble<T> implements Iterator {
             }
         } else if (currentString == quantityStrings - 1) {
             if (currentColumn < quantityCoulumns - 1) {
-                return array[currentString++][currentColumn++];
+                return array[currentString][currentColumn++];
             } else if (currentColumn == quantityCoulumns - 1) {
-                return array[currentString++][currentColumn++];
+                return array[currentString++][currentColumn];
             }
         }
         return array[currentString][currentColumn];

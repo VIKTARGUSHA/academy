@@ -1,8 +1,9 @@
+
 package by.academy.Test6;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
+        import java.io.FileWriter;
+        import java.io.IOException;
+        import java.util.Scanner;
 
 public class Task1 {
     public static void main(String[] args) throws IOException {
@@ -11,7 +12,7 @@ public class Task1 {
         while (scanner.hasNext()){
             String s = scanner.next();
             if(!s.equals("stop")){
-fileWriter.write(s+" ");
+                fileWriter.write(s+" ");
             }else break;
         }
         scanner.close();

@@ -16,11 +16,11 @@ public class Main {
         arrayList.add(new User("Jack", "Dowsun", 20));
         arrayList.add(new User("Patrick", "Suazy", 33));
         arrayList.add(new User("Danila", "Bodrov", 22));
-        File file = new File("C:\\Users\\VAbukhovich\\IdeaProjects\\academy\\users");
+        File file = new File("C:\\Users\\AdmiN\\academy\\users");
         file.mkdir();
 
         for (User user : arrayList) {
-            File file1 = new File("C:\\Users\\VAbukhovich\\IdeaProjects\\academy\\users", user.getName() + user.getSurName() + ".txt");
+            File file1 = new File("C:\\Users\\AdmiN\\academy\\users", user.getName() + user.getSurName() + ".txt");
             file1.createNewFile();
             try {
                 ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(file1.getAbsolutePath()));

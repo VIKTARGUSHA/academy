@@ -1,6 +1,8 @@
 package by.academy.Test6.Task3;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String name;
     private String surName;
     private int age;
@@ -8,6 +10,15 @@ public class User {
         this.name = name;
         this.surName = surName;
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", surName='" + surName + '\'' +
+                ", age=" + age +
+                '}';
     }
 
     public String getName() {

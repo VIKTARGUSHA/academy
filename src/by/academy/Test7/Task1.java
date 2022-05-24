@@ -12,6 +12,6 @@ public class Task1  {
                 .sorted(Comparator.comparing(o -> o)).toList();
         System.out.println(list.size() + " " + list.toString());
         Map<String, Long> map = list.stream().collect(Collectors.toMap(o -> o.toString(), o -> o, (o,o1) -> o, TreeMap::new));
-        System.out.println(map.size() + " " + map.toString());
+        System.out.println(map.size() + " " + map);
      }
 }

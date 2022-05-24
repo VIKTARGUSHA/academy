@@ -1,4 +1,4 @@
-package by.academy.Test7;
+package by.academy.Test7.Task1;
 
 import java.util.Comparator;
 

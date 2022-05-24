@@ -1,4 +1,4 @@
-package by.academy.Test7;
+package by.academy.Test7.Task1;
 
 import java.util.*;
 import java.util.function.*;
@@ -11,7 +11,7 @@ public class Task1  {
                 .map(o -> o = (long) (o * 3.14 - 20)).filter(o -> o < 100).boxed()
                 .sorted(Comparator.comparing(o -> o)).toList();
         System.out.println(list.size() + " " + list.toString());
-        Map<String, Long> map = list.stream().collect(Collectors.toMap(o -> o.toString(), o -> o, (o,o1) -> o, TreeMap::new));
+        Map<String, Long> map = list.stream().collect(Collectors.toMap(Object::toString, o -> o, (o, o1) -> o, TreeMap::new));
         System.out.println(map.size() + " " + map);
      }
 }

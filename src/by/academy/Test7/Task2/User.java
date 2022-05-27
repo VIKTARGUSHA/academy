@@ -1,15 +1,31 @@
 package by.academy.Test7.Task2;
 
+
+import java.util.Date;
+
 public class User extends Person{
 private String login;
 private String password;
 private String email;
-    public User(String firstName, String lastName, int age, String login, String password,String email) {
-        super(firstName, lastName, age);
+
+    public User(String firstName, String lastName, int age, Date date, String login, String password, String email) {
+        super(firstName, lastName, age, date);
         this.login = login;
         this.password = password;
         this.email = email;
     }
+    public User(String a, String b){
+        super();
+        login = a;
+        email = b;
+    }
+
+    public User(String a, String b, int age){
+        super();
+        login = a;
+        email = b;
+    }
+
     public User(){
         super();
     }

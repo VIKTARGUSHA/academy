@@ -1,13 +1,15 @@
 package by.academy.Test7.Task2;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Main {
-    public static void main(String[] args) throws NoSuchMethodException, NoSuchFieldException, IllegalAccessException, InvocationTargetException {
+    public static void main(String[] args) throws NoSuchMethodException, NoSuchFieldException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Class<User> classUser = User.class;
         Class<Person> classPerson = Person.class;
 
@@ -88,15 +90,6 @@ public class Main {
         Field fieldPersonPrivateDate = classPerson.getDeclaredField("date");
         Field [] fieldsDeclairedPerson = classPerson.getDeclaredFields();
 
-//        fieldUserPrivateEmail.setAccessible(true);
-//        fieldUserPrivateLogin.setAccessible(true);
-//        fieldUserPrivatePassword.setAccessible(true);
-//
-//        fieldPersonPrivateAge.setAccessible(true);
-//        fieldPersonPrivateDate.setAccessible(true);
-//        fieldPersonPrivateFirstName.setAccessible(true);
-//        fieldPersonPrivateLastName.setAccessible(true);
-
         System.out.println("Fields of User: ");
         for(Field field : fieldsDeclairUser ){
             field.setAccessible(true);
@@ -147,5 +140,28 @@ fieldUserPrivateEmail.setAccessible(true);
         Method methodUser2 = classUser.getDeclaredMethod("loginAndEmail");
         methodUser2.setAccessible(true);
         System.out.println(methodUser2.invoke(user));
+        Method personToStringMethod = classPerson.getMethod("toString");
+        System.out.println(personToStringMethod.invoke(person));
+
+        Constructor<?> constructorUser = classUser.getConstructor(String.class, String.class, int.class, Date.class, String.class, String.class, String.class);
+        Constructor<?> constructorUser2 = classUser.getConstructor(String.class, String.class);
+        Constructor<?> constructorUser1 = classUser.getConstructor();
+        Constructor<?> constructorUser3 = classUser.getConstructor(String.class, String.class, int.class);
+        Date date = new Date(22/2/2022);
+        User userReflect = (User)constructorUser1.newInstance();
+        User userReflect1 = (User) constructorUser.newInstance("a", "b", 1, date, "c", "d", "e" );
+        User userReflect2 = (User) constructorUser2.newInstance("a", "b");
+        User userReflect3 = (User) constructorUser3.newInstance("e","d",1);
+        Field fieldUser5 = classUser.getDeclaredField("login");
+        fieldUser5.setAccessible(true);
+        System.out.println(fieldUser5.get(userReflect2) + " " + userReflect.getClass());
+fieldUser5.set(userReflect2, "u");
+        System.out.println(fieldUser5.get(userReflect2));
+        System.out.println(fieldUser5.get(userReflect3));
+        Constructor[] constructors = classUser.getConstructors();
+        for (Constructor constructor : constructors){
+            System.out.println(Arrays.toString(constructor.getParameterTypes()));
+        }
+
     }
 }

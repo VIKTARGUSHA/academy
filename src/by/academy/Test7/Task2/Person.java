@@ -7,15 +7,25 @@ public class Person {
     private String lastName;
     private int age;
     private Date date;
-    public Person(String firstName, String lastName, int age){
+    public Person(String firstName, String lastName, int age, Date date){
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.date = date;
     }
 
 public Person(){
 
 }
+
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", date=" + date +
+                '}';
+    }
 
     public String getFirstName() {
         return firstName;

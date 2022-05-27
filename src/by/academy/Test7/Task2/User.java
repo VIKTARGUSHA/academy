@@ -14,13 +14,16 @@ private String email;
         super();
     }
 
-
     public String printUserInfo() {
         return "User{" +
                 "login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    private String loginAndEmail(){
+        return login + " " + email;
     }
 
     public String getLogin() {

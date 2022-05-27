@@ -6,7 +6,7 @@ public class Person {
     private String firstName;
     private String lastName;
     private int age;
-    private Date date = new Date(2022, 05, 24);
+    private Date date;
     public Person(String firstName, String lastName, int age){
         this.firstName = firstName;
         this.lastName = lastName;

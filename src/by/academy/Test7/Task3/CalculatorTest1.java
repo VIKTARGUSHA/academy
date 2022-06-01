@@ -1,18 +1,17 @@
 package by.academy.Test7.Task3;
 
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class CalculatorTest1 extends Assert {
+class CalculatorTest1 {
 
     @Test
-    public void subtract() {
-        Calculator calculator = new Calculator(2,8);
-int expected = calculator.subtract(2, 8);
-int actual = -6;
-assertTrue(expected == actual);
+    void add() {
+        Calculator calculator = new Calculator();
+        int expected = calculator.add(10, 7);
+        int actual = 17;
+        assertTrue(actual == expected);
     }
-
 }

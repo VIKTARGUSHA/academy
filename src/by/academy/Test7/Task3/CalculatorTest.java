@@ -1,19 +1,17 @@
 package by.academy.Test7.Task3;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CalculatorTest extends Assert {
+class CalculatorTest {
 
-    @org.junit.jupiter.api.Test
-    void add() {
-        Calculator calculatorAdd = new Calculator(3,10);
-        int exspected = calculatorAdd.add(calculatorAdd.x, calculatorAdd.y);
-        int actual = 13;
-        assertEquals(actual , exspected);
+    @Test
+    void subtract() {
+        Calculator calculator = new Calculator();
+        int expected = calculator.subtract(10, 7);
+        int actual  = 3;
+        assertEquals(expected, actual);
     }
-
-
 }

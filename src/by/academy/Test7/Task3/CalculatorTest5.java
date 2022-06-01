@@ -21,7 +21,7 @@ class CalculatorTest5 {
     }
 
     @ParameterizedTest(name = "{index} => a = {0}, b = {1}, c = {2}")
-    @MethodSource("someMethod1")
+    @MethodSource("someMethodSubtract")
     public void subtract(int a, int b, int c){
         Calculator calculator = new Calculator();
         int expected = calculator.subtract(a,b);
@@ -29,15 +29,43 @@ class CalculatorTest5 {
         assertEquals(actual, expected);
     }
 
-    private static ArrayList<int []> someMethod1(){
-        int [] array = {1, 2, 3};
-        int [] array1 = {2, 3, 4};
-        int [] array2 = {3, 4, 5};
-        ArrayList<int []> arrayList = new ArrayList<>();
-        arrayList.add(array2);
-        arrayList.add(array);
-        arrayList.add(array1);
-        return arrayList;
+    @ParameterizedTest(name = "{index} => a = {0}, b = {1}, c = {2}")
+    @MethodSource("someMethodDivided")
+public void divided(int a, int b, int c){
+        Calculator calculator = new Calculator();
+        int expected = calculator.divide(a,b);
+        int actual = c;
+        assertTrue(expected == actual);
+    }
+
+    @ParameterizedTest(name = "{index} => a = {0}, b = {1}, c = {2}")
+    @MethodSource("someMethodMultiply")
+    public void multiply(int a, int b, int c){
+        Calculator calculator = new Calculator();
+        int expected = calculator.multyply(a,b);
+        int actual = c;
+        assertTrue(expected == actual);
+    }
+
+    private static Stream<Arguments> someMethodMultiply(){
+        return Stream.of(Arguments.of(2, 3, 6),
+                Arguments.of(3, 3, 9),
+                Arguments.of(5, 5, 25)
+        );
+    }
+
+    private static Stream<Arguments> someMethodDivided(){
+        return Stream.of(Arguments.of(5, 2, 2),
+                Arguments.of(9, 3, 3),
+        Arguments.of(4, 1, 4)
+        );
+    }
+
+    private static Stream<Arguments> someMethodSubtract(){
+        return Stream.of(Arguments.of(3, 2, 1),
+                Arguments.of(4,3,1),
+                Arguments.of(7, 5, 2)
+        );
     }
 
     private static Stream<Arguments> someMethod() {

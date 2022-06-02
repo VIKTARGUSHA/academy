@@ -9,5 +9,6 @@ import org.junit.runners.Suite;
         MathTest1.class,
         MathTest2.class
 })
-public class JUnitTestClass {
+
+public class JunitTestSuit {
 }

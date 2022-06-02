@@ -1,8 +1,8 @@
 package by.academy.Test7.Task3;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MathTest2 {
     double actual = 90;
@@ -10,6 +10,6 @@ public class MathTest2 {
 
      @Test
     public void mathTest(){
-         Assertions.assertEquals(actual, expected);
+         assertEquals(actual, expected);
      }
 }

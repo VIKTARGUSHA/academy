@@ -1,14 +1,14 @@
 package by.academy.Test7.Task3;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CalculatorTest2 {
+public class CalculatorTest2 {
 
     @Test
-    void divide() {
+    public void divide() {
         Calculator calculator = new Calculator();
         int expected = calculator.divide(10,7);
         int actual = 1;

@@ -1,14 +1,13 @@
 package by.academy.Test7.Task3;
 
-import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class CalculatorTest1 {
+public class CalculatorTest1 {
 
     @Test
-    void add() {
+    public void add() {
         Calculator calculator = new Calculator();
         int expected = calculator.add(10, 7);
         int actual = 17;

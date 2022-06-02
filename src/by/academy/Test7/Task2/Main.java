@@ -162,6 +162,5 @@ fieldUser5.set(userReflect2, "u");
         for (Constructor constructor : constructors){
             System.out.println(Arrays.toString(constructor.getParameterTypes()));
         }
-
     }
 }

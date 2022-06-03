@@ -21,7 +21,7 @@ public class CalculatorTest3 {
     public static Iterable<Object> data() {
         return Arrays.asList(new Object[][]{
                 {5, 5, 0},
-                {5, 4, 10},
+                {5, 4, 1},
                 {7, 8, -1}
         });
     }

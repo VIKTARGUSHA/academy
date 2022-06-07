@@ -1,14 +1,14 @@
 package by.academy.Test8;
 
 public class FirstEx {
-    private int maxPortCapacity = 1000;
-    private int maxShipCapacity = 20;
-    private static int quantityOfConteinersPort = (int) (Math.random() * 1000);
+    private int maxPortCapacity = 500;
+    private int maxShipCapacity = 100;
+    private static int quantityOfConteinersPort = (int) (Math.random() * 448);
     private int quantityOfConteinersShip = (int) (Math.random() * 80+ 20);
 
     public static void main(String[] args) {
         System.out.println("Initial quantity: " + quantityOfConteinersPort);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             TankerAdd tankerAdd = new TankerAdd();
             TankerSubtract tankerSubtract = new TankerSubtract();
 
@@ -39,7 +39,7 @@ public class FirstEx {
     }
 
     public void setQuantityOfConteinersPort(int quantityOfConteinersPort) {
-        this.quantityOfConteinersPort = FirstEx.quantityOfConteinersPort - quantityOfConteinersShip;
+        FirstEx.quantityOfConteinersPort = FirstEx.quantityOfConteinersPort - quantityOfConteinersShip;
     }
 
     public void setQuantityOfConteinersPortAdd(int quantityOfConteinersPort) {

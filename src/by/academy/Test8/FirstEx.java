@@ -6,18 +6,6 @@ public class FirstEx {
     private static int quantityOfConteinersPort = (int) (Math.random() * 448);
     private int quantityOfConteinersShip = (int) (Math.random() * 80+ 20);
 
-    public static void main(String[] args) {
-        System.out.println("Initial quantity: " + quantityOfConteinersPort);
-        for (int i = 0; i < 100; i++) {
-            TankerAdd tankerAdd = new TankerAdd();
-            TankerSubtract tankerSubtract = new TankerSubtract();
-
-            tankerAdd.start();
-            tankerSubtract.start();
-
-        }
-    }
-
     public int getMaxPortCapacity() {
         return maxPortCapacity;
     }
@@ -38,12 +26,12 @@ public class FirstEx {
         return quantityOfConteinersPort;
     }
 
-    public void setQuantityOfConteinersPort(int quantityOfConteinersPort) {
-        FirstEx.quantityOfConteinersPort = FirstEx.quantityOfConteinersPort - quantityOfConteinersShip;
+    public void setQuantityOfConteinersPort(int quantityOfConteinersShipSubtract) {
+        FirstEx.quantityOfConteinersPort = FirstEx.quantityOfConteinersPort - quantityOfConteinersShipSubtract;
     }
 
-    public void setQuantityOfConteinersPortAdd(int quantityOfConteinersPort) {
-        FirstEx.quantityOfConteinersPort = FirstEx.quantityOfConteinersPort + quantityOfConteinersShip;
+    public void setQuantityOfConteinersPortAdd(int quantityOfConteinersShipAdd) {
+        FirstEx.quantityOfConteinersPort = FirstEx.quantityOfConteinersPort + quantityOfConteinersShipAdd;
     }
 
     public int getQuantityOfConteinersShip() {

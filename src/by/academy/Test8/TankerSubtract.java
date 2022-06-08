@@ -5,7 +5,7 @@ public class TankerSubtract extends Thread {
     public TankerSubtract(PortTerminal portTerminal){
         this.portTerminal = portTerminal;
     }
-    public void run() {
+    public synchronized void run() {
         for (int i = 0; i < 100; i++) {
             portTerminal.subtract();
         }

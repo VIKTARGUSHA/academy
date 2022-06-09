@@ -1,13 +1,18 @@
 package by.academy.Test8;
 
-public class TankerAdd extends Thread {
+public class TankerAdd implements Runnable {
     PortTerminal portTerminal;
     public TankerAdd(PortTerminal portTerminal){
         this.portTerminal = portTerminal;
     }
-    public synchronized void run(){
+    public void run(){
+
         for (int i = 0; i < 100; i++) {
-            portTerminal.add();
+            try {
+                portTerminal.add();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

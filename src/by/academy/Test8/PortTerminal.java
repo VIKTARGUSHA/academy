@@ -8,8 +8,9 @@ public class PortTerminal {
 
     public synchronized void add() {
         int shipCapacity = (int) (Math.random() * maxShipCapacity);
-        while (maxPortCapacity - shipCapacity < shipCapacity) {
+        while (maxPortCapacity - currentQuantityOfConteiners < shipCapacity) {
             try {
+          //      System.out.println("-----------There are too many conteiners----------------");
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -17,13 +18,14 @@ public class PortTerminal {
         }
         System.out.println("Before add port capacity: " + currentQuantityOfConteiners + "   " + "Arraive ship capacity: " + shipCapacity);
         currentQuantityOfConteiners += shipCapacity;
-        notifyAll();
+        notify();
     }
 
     public synchronized void subtract() {
         int shipCapacity = (int) (Math.random() * maxShipCapacity);
         while (currentQuantityOfConteiners - shipCapacity < 0) {
             try {
+               // System.out.println("------------There are too little conteuners");
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -32,5 +34,13 @@ public class PortTerminal {
         System.out.println("Before subtract capacity: " + currentQuantityOfConteiners + "  " + "This ship capacity: " + shipCapacity);
         currentQuantityOfConteiners -= shipCapacity;
         notify();
+    }
+
+    public int getCurrentQuantityOfConteiners() {
+        return currentQuantityOfConteiners;
+    }
+
+    public void setCurrentQuantityOfConteiners(int currentQuantityOfConteiners) {
+        PortTerminal.currentQuantityOfConteiners = currentQuantityOfConteiners;
     }
 }

@@ -1,13 +1,16 @@
 package by.academy.Test8;
 
 public class Port {
-    public static void main(String[] args) {
+public int x = 1;
 
-        for (int i = 0; i < 10; i++) {
-            Terminal1 terminal1 = new Terminal1();
-            Terminal2 terminal2 = new Terminal2();
-            terminal1.start();
-            terminal2.start();
+    public static void main(String[] args) {
+        Store store = new Store();
+        for (int j = 0; j < 5; j++) {
+
+    Terminal3 terminal = new Terminal3(store);
+    Thread terminal3 = new Thread(terminal);
+    terminal3.start();
+
         }
     }
 }

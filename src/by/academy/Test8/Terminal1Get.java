@@ -13,6 +13,7 @@ public class Terminal1Get extends Thread {
         synchronized (port) {
             while (0 > port.getCurrentCapacity() - ship.getShipCapacitySubtract()){
                 try {
+                    System.out.println("get1 wait");
                     wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();

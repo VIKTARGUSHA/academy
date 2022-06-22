@@ -11,7 +11,14 @@ public class Terminal2Get extends Thread {
 
     public void run() {
 synchronized (port) {
-    while ( 0 > port.getCurrentCapacity() - ship.getShipCapacitySubtract())
+    while ( 0 > port.getCurrentCapacity() - ship.getShipCapacitySubtract()){
+        try {
+            System.out.println("get2 wait");
+            wait();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
     port.setCurrentCapacity(port.getCurrentCapacity() - ship.getShipCapacitySubtract());
     System.out.println("Terminal2Get is working " + port.getCurrentCapacity() + " Ship data: " +
             ship.getShipCurrentCapacity()+ " " + ship.getShipCapacitySubtract() + " "

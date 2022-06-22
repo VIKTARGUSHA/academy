@@ -2,7 +2,7 @@ package by.academy.Test8;
 
 public class Port {
     private int currentCapacity;
-    private int maxCapacity;
+    private int maxCapacity = 100;
     public Port(int currentCapacity){
         this.currentCapacity = currentCapacity;
     }

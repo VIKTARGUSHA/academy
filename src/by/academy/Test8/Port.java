@@ -1,16 +1,21 @@
 package by.academy.Test8;
 
 public class Port {
-public int x = 1;
+    private int currentCapacity;
+    private int maxCapacity = 100;
+    public Port(int currentCapacity){
+        this.currentCapacity = currentCapacity;
+    }
 
-    public static void main(String[] args) {
-        Store store = new Store();
-        for (int j = 0; j < 5; j++) {
+    public int getCurrentCapacity() {
+        return currentCapacity;
+    }
 
-    Terminal3 terminal = new Terminal3(store);
-    Thread terminal3 = new Thread(terminal);
-    terminal3.start();
+    public void setCurrentCapacity(int currentCapacity) {
+        this.currentCapacity = currentCapacity;
+    }
 
-        }
+    public int getMaxCapacity() {
+        return maxCapacity;
     }
 }

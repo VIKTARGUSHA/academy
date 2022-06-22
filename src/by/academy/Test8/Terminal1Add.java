@@ -8,9 +8,11 @@ public class Terminal1Add extends Thread{
         this.ship = ship;
     }
     public void run(){
+        System.out.println("a1");
         synchronized (port) {
             while (port.getCurrentCapacity() + ship.getShipCapacityAdd() > port.getMaxCapacity()){
                 try {
+                    System.out.println("add1 wait");
                     wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -20,7 +22,8 @@ public class Terminal1Add extends Thread{
             System.out.println("Terminal1Add is working " + port.getCurrentCapacity() + " Ship data: " +
                     ship.getShipCurrentCapacity() + " " + ship.getShipCapacitySubtract() + " "
                     + ship.getShipCapacityAdd());
-            notify();
+            notifyAll();
         }
+
     }
 }

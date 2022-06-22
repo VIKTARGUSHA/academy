@@ -9,9 +9,11 @@ public class Terminal2Add implements Runnable {
     }
     @Override
     public void run() {
+        System.out.println("a2");
         synchronized (port) {
             while (port.getMaxCapacity() < port.getCurrentCapacity() + ship.getShipCapacityAdd()){
                 try {
+                    System.out.println("add2 wait");
                     wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -21,7 +23,8 @@ public class Terminal2Add implements Runnable {
             System.out.println("Terminal2Add is working " + port.getCurrentCapacity() + " Ship data: " +
                     ship.getShipCurrentCapacity() + " " + ship.getShipCapacitySubtract() + " "
                     + ship.getShipCapacityAdd());
-            notify();
+            notifyAll();
         }
+
     }
 }

@@ -10,6 +10,7 @@ public class Terminal1Get extends Thread {
     }
 
     public void run() {
+        System.out.println("g1");
         synchronized (port) {
             while (0 > port.getCurrentCapacity() - ship.getShipCapacitySubtract()){
                 try {
@@ -23,7 +24,8 @@ public class Terminal1Get extends Thread {
             System.out.println("Terminal1Get is working " + port.getCurrentCapacity() + " Ship data: " +
                     ship.getShipCurrentCapacity()+ " " + ship.getShipCapacitySubtract() + " "
                     + ship.getShipCapacityAdd());
-            notify();
+            notifyAll();
         }
+
     }
 }

@@ -5,7 +5,7 @@ public class PortClient {
     public static void main(String[] args) throws InterruptedException {
         Port port = new Port((int) (Math.random() * 100));
         for (int i = 0; i < 25; i++) {
-          //  Thread.sleep(100);
+            Thread.sleep(100);
             int shipCurrentCapacity1 = (int) (Math.random() * 20);
             int shipAddQuantity1 = (int) (Math.random() * shipCurrentCapacity1);
             int shipCurrentCapacity2 = (int) (Math.random() * 20);

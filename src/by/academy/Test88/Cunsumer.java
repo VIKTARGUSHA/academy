@@ -8,15 +8,17 @@ public class Cunsumer extends Thread {
     }
 
     public void run() {
-        for (int i = 0; i < 25; i++) {
+      //  for (int i = 0; i < 25; i++) {
             synchronized (shop) {
+
                 try {
-                    shop.setGoodsQuantity(shop.getGoodsQuantity() - 1);
+                    shop.cunsumer();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println("Cunsumer " + shop.getGoodsQuantity());
+
+                System.out.println(Thread.currentThread().getName() + "Cunsumer " + shop.getGoodsQuantity());
             }
-        }
+    //    }
     }
 }

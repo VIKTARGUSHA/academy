@@ -8,15 +8,17 @@ public class Suplayer extends Thread {
     }
 
     public void run() {
-        for (int i = 0; i < 25; i++) {
+       // for (int i = 0; i < 25; i++) {
             synchronized (shop) {
+
                 try {
-                    shop.setGoodsQuantity(shop.getGoodsQuantity() + 1);
+                    shop.supply();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println("Syplayer " + shop.getGoodsQuantity());
+
+                System.out.println(Thread.currentThread().getName() + "Syplayer " + shop.getGoodsQuantity());
             }
-        }
+      //  }
     }
 }
